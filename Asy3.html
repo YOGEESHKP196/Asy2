@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript</h1>
+</body>
+<script>
+    console.log("Asynchronous JavaScript");
+    
+    let promise = new Promise(
+        (success,failure)=>{
+            let response_code = 100;
+            if(response_code == 200){
+                success("Everything is okay");
+            }else{
+                failure("Something went wrong");
+            }
+            
+            
+        }
+    )
+    promise.then(
+        (success)=>{
+            console.log(success);
+        },
+        (failure)=>{
+            console.log(failure);
+        }
+    )
+
+    console.log("I am Last");
+</script>
+</html>
